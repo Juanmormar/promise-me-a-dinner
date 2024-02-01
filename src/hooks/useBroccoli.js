@@ -5,6 +5,7 @@ import { reset, setter } from "../javascript/stateChanger.js";
 function useBroccoli() {
   const [broccoli, setBroccoli] = useState([]);
   const addItem = setter(setBroccoli)
+  const [stepsListed3, setStepsListed3] = useState(false)
 
   async function getBroccoliInstructions() {
     reset(setBroccoli); // Resets the broccoli state to an empty array
@@ -18,6 +19,7 @@ function useBroccoli() {
 			// setStepsListed3(true)
 		}
 		addItem(`Broccoli is ready!`)
+		setStepsListed3(true)
 		
 		
 
@@ -33,7 +35,7 @@ function useBroccoli() {
 		
 		// Don't change the code below this line
 	}
-  return [broccoli, getBroccoliInstructions]
+  return [broccoli, getBroccoliInstructions,stepsListed3]
 }
 
 

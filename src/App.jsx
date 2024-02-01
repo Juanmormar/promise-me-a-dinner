@@ -14,7 +14,7 @@ import useSteak from './hooks/useSteak.js';
 function App() {
 	const [mashedPotatoes, getMashedInstructions,stepsListed] = useMashedPotatoes();
 	const [steak, getSteakInstructions, stepsListed2] = useSteak();
-	const [broccoli, getBroccoliInstructions] = useBroccoli();
+	const [broccoli, getBroccoliInstructions,stepsListed3] = useBroccoli();
 	const [brusselSprouts, getBrusselSproutsInstructions] = useBrusselSprouts()
 
 	const getData = () => {
@@ -30,7 +30,7 @@ function App() {
 			<div className='dinner-table'>
 				<MashedPotatoes mashedPotatoes={mashedPotatoes} stepsListed={stepsListed} />
 				<Steak steak={steak} stepsListed2={stepsListed2} />
-				<Broccoli broccoli={broccoli} />
+				<Broccoli broccoli={broccoli} stepsListed3={stepsListed3} />
 				<BrusselSprouts brusselSprouts={brusselSprouts} />
 			</div>
 		</div>
