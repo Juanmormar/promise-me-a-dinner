@@ -3,9 +3,11 @@ import { obtainInstruction } from '../javascript/obtainInstruction.js';
 import { reset, setter } from '../javascript/stateChanger.js';
 import { getInstruction } from '../javascript/getInstruction.js';
 
+
 function useSteak() {
 	const [steak, setSteak] = useState([]);
 	const addItem = setter(setSteak);
+	const [stepsListed2, setStepsListed2] = useState(false);
 
 	function getSteakInstructions() {
 		reset(setSteak);
@@ -28,10 +30,13 @@ function useSteak() {
 		return obtainInstruction(food,7)
 		}).then((step7)=>{addItem(step7)
 		addItem(`Steak is ready!`)
+		setStepsListed2(true)
+		
+
 	}).catch((err)=>{console.log(err)})
 }
 	
-	return [steak, getSteakInstructions];
+	return [steak, getSteakInstructions, stepsListed2];
 }
 
 export default useSteak;

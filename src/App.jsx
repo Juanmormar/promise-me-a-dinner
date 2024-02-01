@@ -12,8 +12,8 @@ import useMashedPotatoes from './hooks/useMashedPotatoes.js';
 import useSteak from './hooks/useSteak.js';
 
 function App() {
-	const [mashedPotatoes, getMashedInstructions] = useMashedPotatoes();
-	const [steak, getSteakInstructions] = useSteak();
+	const [mashedPotatoes, getMashedInstructions,stepsListed] = useMashedPotatoes();
+	const [steak, getSteakInstructions, stepsListed2] = useSteak();
 	const [broccoli, getBroccoliInstructions] = useBroccoli();
 	const [brusselSprouts, getBrusselSproutsInstructions] = useBrusselSprouts()
 
@@ -28,8 +28,8 @@ function App() {
 		<div className='App'>
 			<button onClick={getData}>Make a Dinner</button>
 			<div className='dinner-table'>
-				<MashedPotatoes mashedPotatoes={mashedPotatoes} />
-				<Steak steak={steak} />
+				<MashedPotatoes mashedPotatoes={mashedPotatoes} stepsListed={stepsListed} />
+				<Steak steak={steak} stepsListed2={stepsListed2} />
 				<Broccoli broccoli={broccoli} />
 				<BrusselSprouts brusselSprouts={brusselSprouts} />
 			</div>

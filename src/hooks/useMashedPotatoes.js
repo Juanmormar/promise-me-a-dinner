@@ -5,6 +5,7 @@ import { reset, setter } from "../javascript/stateChanger.js";
 
 function useMashedPotatoes() {
   const [mashedPotatoes, setMashedPotatoes] = useState([]);
+  const [stepsListed, setStepsListed] = useState(false);
 
   const addItem = setter(setMashedPotatoes)
 
@@ -29,6 +30,7 @@ function useMashedPotatoes() {
 						getInstruction('mashedPotatoes',4,(step4)=>{
 							addItem(step4)
 							addItem('Mashed potatoes are ready!')
+							setStepsListed(true)
 						}, (error)=>console.log(error))
 					}, (error)=>console.log(error))
 				}, (error)=>console.log(error))
@@ -83,9 +85,11 @@ function useMashedPotatoes() {
 		);
 		 */
 		// Don't change the code below this line
+		
 	}
 
-  return [mashedPotatoes, getMashedInstructions]
+  return [mashedPotatoes, getMashedInstructions, stepsListed]
+  
 }
 
 export default useMashedPotatoes

@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 
 const MashedPotatoes = (props) => {
-	const { mashedPotatoes } = props;
+	const { mashedPotatoes, stepsListed } = props;
 	
 
 	return (
 		<div className='food'>
 			{mashedPotatoes.length > 0 && (
 				<>
-					<img src='/images/mashed-potatoes.jpg' />
+					 <img src='/images/mashed-potatoes.jpg'  style={{display: stepsListed ? 'block' : 'none'}}/>
 					<ol>
 						{mashedPotatoes.map((e) => (
-							<li key={e}>{e}</li>
+							 <li key={e}>{e}</li>
 						))}
 					</ol>
 				</>
@@ -20,8 +20,9 @@ const MashedPotatoes = (props) => {
 	);
 };
 
-export default MashedPotatoes;
+
 
 MashedPotatoes.propTypes = {
-	mashedPotatoes: PropTypes.array,
+	mashedPotatoes: PropTypes.array	
 };
+export default MashedPotatoes;

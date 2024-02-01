@@ -6,23 +6,28 @@ function useBroccoli() {
   const [broccoli, setBroccoli] = useState([]);
   const addItem = setter(setBroccoli)
 
-	async function getBroccoliInstructions() {
-		reset(setBroccoli)
-		const food = 'broccoli';
-		// Don't change the code above this line
-		try{
-			const steps = 6
-			for (let step = 0; step < steps; step++ ){
-				const instruction = await obtainInstruction(food, step)
-				addItem(instruction)
-			}
-			addItem(`Broccoli is ready!`)
+  async function getBroccoliInstructions() {
+    reset(setBroccoli); // Resets the broccoli state to an empty array
+    const food = 'broccoli';
 
+	try{
+		const steps = 6
+		for (let step = 0; step < steps; step++ ){
+			const instruction = await obtainInstruction(food, step)
+			addItem(instruction)
+			// setStepsListed3(true)
 		}
-		catch(err){
-			console.log(err)
-		}
+		addItem(`Broccoli is ready!`)
 		
+		
+
+	}
+	catch(err){
+		console.log(err)
+	}
+	
+
+
 
 
 		
