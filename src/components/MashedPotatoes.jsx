@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 const MashedPotatoes = (props) => {
 	const { mashedPotatoes } = props;
+	
 
 	return (
 		<div className='food'>

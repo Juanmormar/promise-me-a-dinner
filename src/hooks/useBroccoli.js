@@ -10,7 +10,19 @@ function useBroccoli() {
 		reset(setBroccoli)
 		const food = 'broccoli';
 		// Don't change the code above this line
+		try{
+			const steps = 6
+			for (let step = 0; step < steps; step++ ){
+				const instruction = await obtainInstruction(food, step)
+				addItem(instruction)
+			}
+			addItem(`Broccoli is ready!`)
 
+		}
+		catch(err){
+			console.log(err)
+		}
+		
 
 
 		
